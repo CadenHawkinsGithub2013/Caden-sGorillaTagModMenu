@@ -1,0 +1,24 @@
+public class Main {
+public static void Speedboost()
+{
+   GorillaLocamotion.Player.Instance.jumpMultiplier = 2.8f;
+   GorillaLocamotion.Player.Instance.maxJumpSpeed = 6.4f;
+}
+
+public static void Fly()
+{
+   if (ControllerInputPoller.instance.rightControllerSecondaryButton)
+   {
+      GorillaLocamotion.Player.Instance.transform.position += (GorillaLocamotion.Player.Instance.headCollider.transform.forward * Time.deltaTime) * 15;
+      GorillaLocamotion.Player.Instance.GetComponent<Rigidbody>().velocity = Vector3.zero;
+   }
+
+}
+
+public static:void RightGripFly2()
+{
+   if (ControllerInputPoller.instance.rightGrab)
+   {
+    GorillaLocamotion.Player.Instance.transform.position += (GorillaLocamotion.Player.Instance.headCollider.transform.forward * Time.deltaTime) * 15;
+    GorillaLocamotion.Player.Instance.GetComponent<Rigidbody>().velocity = Vector3.zero;
+   }
